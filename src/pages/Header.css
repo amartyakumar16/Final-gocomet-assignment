@@ -1,0 +1,118 @@
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.navigation {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-right: 2rem;
+}
+
+.navigation a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+/* Gradient border effect */
+.navigation a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navigation a:hover {
+  transform: translateY(-2px);
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navigation a:hover::before {
+  opacity: 1;
+}
+
+/* Active state */
+.navigation a.active {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+}
+
+/* Click effect */
+.navigation a:active {
+  transform: scale(0.95) translateY(0);
+}
+
+/* Focus state for accessibility */
+.navigation a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  
+  .navigation {
+    gap: 1.5rem;
+    margin-right: 0;
+  }
+  
+  .navigation a {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
