@@ -1,0 +1,419 @@
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header/Navigation */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+
+  .bgimg-container {
+    position: absolute;
+    top: -10%;
+    right: 0;
+    width: 50%; /* Adjust width as needed */
+    height: 100%;
+    background-image: url('../assets/bgimg.png');
+    background-repeat: no-repeat;
+    background-size: contain; /* Ensures the image scales proportionally */
+    background-position: center right;
+    z-index: 1; /* Place it above containers but below text */
+    pointer-events: none; /* Ensures the image doesn't interfere with interactions */
+    
+    /* Apply linear opacity mask from top to bottom */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+  
+  
+  /* Ensure text elements have a higher z-index */
+  .hero-section, 
+  .nav, 
+  .main-content {
+    position: relative;
+    z-index: 0; /* Text stays above the background image */
+  }
+  
+  
+  /* Hero Section */
+  .hero-section {
+    padding: 40px 0;
+    background: #fff;
+  }
+  
+  .hero-section h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #1f2937;
+  }
+  
+  .hero-section p {
+    color: #6b7280;
+    margin-bottom: 32px;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    gap: 0px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+    opacity: 100%;
+    /* width: 80%; */
+    /* border: solid 2px black; */
+  }
+  
+  .search-input-container {
+    position: relative;
+    flex: 2;
+    opacity: 100%;
+    width: 0px;
+    border: none;
+  }
+
+  
+  .search-bar input {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 100%;
+    width: 80%;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 80%;
+    border: solid 2px #878787 ;
+  }
+  
+  .search-bar input[type="date"]{
+    width: 140px;
+  }
+
+  .search-bar input[type="date"] {
+    width: 140px;
+    height: 35px;
+    padding: 5px;
+    border: 2px solid #878787;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .search-bar .divider {
+    height: 45px; /* Adjust the height of the divider */
+    width: 0px; /* Thin vertical line */
+    background-color: #878787; /* Light gray color for the line */
+  }
+  .search-bar input[type="number"] {
+    width: 30px;
+    height: 20px;
+    background-image: url(../assets/mdi_people.png );
+    background-repeat: no-repeat;
+    background-position: 5px center; 
+    background-size: 20px 20px;
+    padding-left: 3%;
+    border: solid 2px #878787;
+    margin-left: 80px;
+  }
+  
+  .search-bar button {
+    padding: 12px 24px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    height: 45px;
+    margin-left: 20px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #1557b0;
+   
+  }
+  
+  /* Search Results Dropdown */
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .search-result-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .search-result-item:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* Main Content Layout */
+  .main-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  
+  /* Filters */
+  .filters {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .filters h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .clear-all {
+    color: #1a73e8;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .filter-category {
+    margin-bottom: 24px;
+  }
+  
+  .filter-category h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #374151;
+  }
+  
+  .filter-category label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: #4b5563;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Active Filters */
+  .active-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-tag {
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* Hotels Grid */
+  .explore-hotels {
+    background: white;
+    /* opacity :0%; */
+  }
+
+  .explore-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .explore-header h2 {
+    font-size: 24px;
+    color: #1f2937;
+  }
+  
+  .sort-by {
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,)); /* Adjusts based on screen size */
+    gap: 20px; /* Space between cards */
+  }
+  
+  .hotel-card {
+    border: 1px solid #d1d5db; /* Light gray border for subtle separation */
+    border-radius: 2px; /* Smooth rounded edges */
+    overflow: hidden;
+    height: 250px; /* Maintain image size and card proportion */
+    background-color: #ffffff; /* Clean white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Professional shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+  }
+  
+  .hotel-card:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  }
+  
+  .hotel-card img {
+    width: 100%; /* Ensure full width */
+    height: 200px; /* Maintain image size */
+    object-fit: cover; /* Retain aspect ratio */
+    border-bottom: 1px solid #d1d5db; /* Subtle separator */
+  }
+  
+  .hotel-details {
+    padding: 12px 16px 8px; /* Reduced bottom padding */
+    background-color: #ffffff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hotel-details h3 {
+    font-size: 18px;
+    
+    color: #000000;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hotel-details p {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 2px 0; /* Reduced margin */
+  }
+    
+.price-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px; /* Reduced margin */
+}
+
+.price-and-button button {
+  padding: 4px 10px; /* Smaller padding */
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px; /* Slightly smaller font */
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.price-and-button p {
+  font-size: 15px; /* Slightly smaller font */
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}  
+  .price-and-button button:hover {
+    background-color: #020e1c; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  
+  .price-and-button button:active {
+    background-color: #00070d; /* Even darker blue on click */
+    transform: translateY(1px); /* Subtle depression effect */
+  }
+  .card-image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .rating span {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  
+  change the colours so that the rating would be shown on a light abckgorund!!!    
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  
+  .pagination button {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background: #1a73e8;
+    color: white;
+    border-color: #1a73e8;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  
