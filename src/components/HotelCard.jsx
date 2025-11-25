@@ -11,6 +11,7 @@ const HotelCard = ({ hotel }) => {
       <button>View</button>
     </div>
   );
+  
 };
 
 export default HotelCard;
